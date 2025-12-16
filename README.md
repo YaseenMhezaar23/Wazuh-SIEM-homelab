@@ -26,8 +26,7 @@ Windows 10 Endpoint (Wazuh Agent)
 ▼
 Ubuntu Server (Wazuh Manager + Dashboard)
 
-yaml
-Copy code
+
 
 - Both systems are connected using a **bridged network adapter**
 - Communication occurs within the same subnet (e.g., `192.168.0.0/24`)
@@ -45,21 +44,18 @@ Copy code
 
 ## ⚙️ Wazuh Manager Installation (Ubuntu)
 1. Add Wazuh GPG key:
-```bash
 curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | sudo gpg --dearmor -o /usr/share/keyrings/wazuh-archive-keyring.gpg
 Download and run the installer:
 
-bash
-Copy code
 curl -sO https://packages.wazuh.com/4.12/wazuh-install.sh
+
 sudo bash ./wazuh-install.sh -a -i
+
 Access the Wazuh Dashboard:
-
-cpp
-Copy code
 https://<Ubuntu-IP>
-Default username: admin
 
+
+Default username: admin
 Password is displayed after installation
 
 🖥️ Wazuh Agent Installation (Windows)
@@ -71,8 +67,7 @@ Enter the Wazuh Manager IP address
 
 Generate and import the authentication key from the manager:
 
-bash
-Copy code
+
 sudo /var/ossec/bin/manage_agents
 Restart the agent service
 
@@ -88,8 +83,6 @@ To simulate real-world attack detection:
 
 Configure a custom directory in the Windows agent:
 
-xml
-Copy code
 <directories realtime="yes">C:\Users\<username>\Downloads\WAZUH-TEST</directories>
 Restart the Wazuh Agent
 
@@ -103,8 +96,7 @@ Delete a file
 
 Observe real-time alerts in:
 
-arduino
-Copy code
+
 Wazuh Dashboard → File Integrity Monitoring
 🔎 Security Events Observed
 File creation events
@@ -148,3 +140,5 @@ Hands-on Wazuh SIEM Home Lab Setup
 👤 Author
 Yaseen Mhezaar
 Aspiring SOC Analyst | SIEM & Blue Team Enthusiast
+
+
